@@ -1,4 +1,4 @@
-export ZSH="/Users/rnakamine/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 plugins=(git)
 
