@@ -1,0 +1,9 @@
+[user]
+	name = Ryo Nakamine
+	email = rnakamine8080@gmail.com
+
+[ghq]
+	root = ~/Development/src
+
+[core]
+	editor = vi
