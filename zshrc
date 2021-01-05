@@ -4,7 +4,6 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-CURRENT_TIME="%{$fg[white]%}[%{$fg[green]%}%D %T%{$fg[white]%}]"
 CURRENT_DIRECTORY="%{$fg[green]%}%{$fg[cyan]%}%~"
 CURRENT_BRANCH="%{$fg_bold[blue]%}\$(git_prompt_info)%{$fg[blue]%}%"
 
@@ -13,8 +12,6 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[red]%}✗%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 
-# PROMPT="$CURRENT_TIME $CURRENT_DIRECTORY $CURRENT_BRANCH %{$reset_color%}
-# $ "
 PROMPT="$CURRENT_DIRECTORY $CURRENT_BRANCH %{$reset_color%}
 $ "
 
