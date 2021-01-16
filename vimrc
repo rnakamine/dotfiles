@@ -42,6 +42,7 @@ set shiftwidth=4
 set softtabstop=4
 set tabstop=4
 set clipboard=unnamed,autoselect
+set shortmess-=S
 
 " status line
 set laststatus=2
