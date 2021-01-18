@@ -17,4 +17,11 @@ do
   fi
 done
 
+# Base16 Shell install
+BASE16_SHELL="$HOME/.config/base16-shell/"
+if [ ! -d $BASE16_SHELL ]; then
+    git clone https://github.com/chriskempson/base16-shell.git $HOME/.config/base16-shell
+    echo "[INFO] Installation of base16shell is complete."
+fi
+
 echo "[INFO] Done."
