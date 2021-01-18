@@ -57,6 +57,12 @@ set statusline+=\ %p%%
 set statusline+=\ %l:%c
 set statusline+=\ 
 
+if has('vim_starting')
+    let &t_SI .= "\e[6 q"
+    let &t_EI .= "\e[2 q"
+    let &t_SR .= "\e[4 q"
+endif
+
 " Base16-Vim
 if filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256
