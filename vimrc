@@ -44,6 +44,18 @@ set tabstop=4
 set clipboard=unnamed,autoselect
 set shortmess-=S
 
+if has('vim_starting')
+    let &t_SI .= "\e[6 q"
+    let &t_EI .= "\e[2 q"
+    let &t_SR .= "\e[4 q"
+endif
+
+" Base16-Vim
+if filereadable(expand("~/.vimrc_background"))
+    let base16colorspace=256
+    source ~/.vimrc_background
+endif
+
 " status line
 set laststatus=2
 set statusline=
@@ -57,25 +69,13 @@ set statusline+=\ %p%%
 set statusline+=\ %l:%c
 set statusline+=\ 
 
-if has('vim_starting')
-    let &t_SI .= "\e[6 q"
-    let &t_EI .= "\e[2 q"
-    let &t_SR .= "\e[4 q"
-endif
-
-" Base16-Vim
-if filereadable(expand("~/.vimrc_background"))
-    let base16colorspace=256
-    source ~/.vimrc_background
-endif
-
 " Makefile
 let _curfile=expand("%:r")
 if _curfile == 'Makefile'
     set noexpandtab
 endif
 
-" Yaml file
+" Yamlfile
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 " Terraform
