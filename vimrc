@@ -43,7 +43,6 @@ set softtabstop=4
 set tabstop=4
 set clipboard=unnamed,autoselect
 set shortmess-=S
-
 if has('vim_starting')
     let &t_SI .= "\e[6 q"
     let &t_EI .= "\e[2 q"
