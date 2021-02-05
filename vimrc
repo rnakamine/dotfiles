@@ -43,10 +43,16 @@ set softtabstop=4
 set tabstop=4
 set clipboard=unnamed,autoselect
 set shortmess-=S
+
 if has('vim_starting')
     let &t_SI .= "\e[6 q"
     let &t_EI .= "\e[2 q"
     let &t_SR .= "\e[4 q"
+endif
+
+if has("autocmd")
+    autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+    autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
 endif
 
 " Base16-Vim
@@ -74,9 +80,6 @@ if _curfile == 'Makefile'
     set noexpandtab
 endif
 
-" Yamlfile
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-
 " Terraform
 let g:terraform_align=1
 let g:terraform_fmt_on_save=1
@@ -96,7 +99,7 @@ function! s:on_lsp_buffer_enabled() abort
     nmap <buffer> [g <Plug>(lsp-previous-diagnostic)
     nmap <buffer> ]g <Plug>(lsp-next-diagnostic)
     nmap <buffer> K <plug>(lsp-hover)
-    autocmd BufWritePre <buffer> LspDocumentFormatSync
+    " autocmd BufWritePre <buffer> LspDocumentFormatSync
 endfunction
 augroup lsp_install
     au!
