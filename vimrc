@@ -63,16 +63,7 @@ endif
 
 " status line
 set laststatus=2
-set statusline=
-set statusline=%f
-set statusline+=%m
-set statusline+=%=
-set statusline+=\ %y
-set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
-set statusline+=\ [%{&fileformat}\]
-set statusline+=\ %p%%
-set statusline+=\ %l:%c
-set statusline+=\ 
+set statusline=%f\ %m%=\|\ %{&fileencoding?&fileencoding:&encoding}\ \|\ %{&ft}\ \|\ %{&fileformat}\ \|\ %l:%c\ \|\ %p%%\ 
 
 " Makefile
 let _curfile=expand("%:r")
