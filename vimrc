@@ -19,7 +19,7 @@ Plug 'mattn/vim-goimports'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'cohama/lexima.vim'
 Plug 'tpope/vim-commentary'
-Plug 'chriskempson/base16-vim'
+Plug 'nanotech/jellybeans.vim'
 
 call plug#end()
 
@@ -55,11 +55,10 @@ if has("autocmd")
     autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
 endif
 
-" Base16-Vim
-if filereadable(expand("~/.vimrc_background"))
-    let base16colorspace=256
-    source ~/.vimrc_background
-endif
+let g:jellybeans_overrides = {
+\    'background': { 'guibg': '000000' },
+\}
+colorscheme jellybeans
 
 " status line
 set laststatus=2
