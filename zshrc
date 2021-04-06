@@ -66,5 +66,13 @@ setopt +o nomatch
 # direnv
 export EDITOR=vi
 eval "$(direnv hook zsh)"
-
 alias direnv='direnv edit .'
+
+# setting AZURE_STORAGE_CONNECTION_STRING
+azstg-set() {
+    NAME=$(az storage account list --query [].name --output tsv | peco)
+    echo Setting the value of AZURE_STORAGE_CONNECTION_STRING to $NAME ..
+    RESOURCE_GROUP=$(az storage account list --query [].[name,resourceGroup] --output tsv | grep ${NAME} | awk '{print $2}')
+    export AZURE_STORAGE_CONNECTION_STRING=$(az storage account show-connection-string -g ${RESOURCE_GROUP} -n ${NAME} --output tsv | awk '{print $1}')
+    echo Done.
+}
