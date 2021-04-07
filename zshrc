@@ -76,3 +76,9 @@ azstg-set() {
     export AZURE_STORAGE_CONNECTION_STRING=$(az storage account show-connection-string -g ${RESOURCE_GROUP} -n ${NAME} --output tsv | awk '{print $1}')
     echo Done.
 }
+
+# trash-cli
+if type trash-put &> /dev/null
+then
+    alias rm=trash-put
+fi
