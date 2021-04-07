@@ -19,7 +19,7 @@ Plug 'mattn/vim-goimports'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'cohama/lexima.vim'
 Plug 'tpope/vim-commentary'
-Plug 'nanotech/jellybeans.vim'
+Plug 'w0ng/vim-hybrid'
 
 call plug#end()
 
@@ -55,10 +55,9 @@ if has("autocmd")
     autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
 endif
 
-let g:jellybeans_overrides = {
-\    'background': { 'guibg': '000000' },
-\}
-colorscheme jellybeans
+" colorscheme
+set background=dark
+colorscheme hybrid
 
 " status line
 set laststatus=2
