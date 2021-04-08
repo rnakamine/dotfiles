@@ -69,7 +69,7 @@ eval "$(direnv hook zsh)"
 alias direnv='direnv edit .'
 
 # setting AZURE_STORAGE_CONNECTION_STRING
-azstg-set() {
+set-azstg() {
     NAME=$(az storage account list --query [].name --output tsv | peco)
     echo Setting the value of AZURE_STORAGE_CONNECTION_STRING to $NAME ..
     RESOURCE_GROUP=$(az storage account list --query [].[name,resourceGroup] --output tsv | grep ${NAME} | awk '{print $2}')
