@@ -19,7 +19,7 @@ Plug 'mattn/vim-goimports'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'cohama/lexima.vim'
 Plug 'tpope/vim-commentary'
-Plug 'w0ng/vim-hybrid'
+Plug 'jacoborus/tender.vim'
 
 call plug#end()
 
@@ -56,8 +56,8 @@ if has("autocmd")
 endif
 
 " colorscheme
-set background=dark
-colorscheme hybrid
+syntax enable
+colorscheme tender
 
 " status line
 set laststatus=2
