@@ -77,6 +77,12 @@ set-azstg() {
     echo Done.
 }
 
+venv-reset() {
+    deactivate
+    python -m venv --clear venv
+    source venv/bin/activate
+}
+
 # trash-cli
 if type trash-put &> /dev/null
 then
