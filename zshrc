@@ -77,6 +77,10 @@ set-azstg() {
     echo Done.
 }
 
+# show grobal ip
+alias showip='curl ipaddr.show'
+
+# reset venv
 venv-reset() {
     deactivate
     python -m venv --clear venv
