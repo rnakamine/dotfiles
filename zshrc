@@ -18,6 +18,7 @@ $ "
 # go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
+export GO111MODULE=on
 
 # ghq
 alias g='cd $(ghq root)/$(ghq list | peco)'
