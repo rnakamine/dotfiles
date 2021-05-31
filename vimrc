@@ -19,7 +19,7 @@ Plug 'mattn/vim-goimports'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'cohama/lexima.vim'
 Plug 'tpope/vim-commentary'
-Plug 'jacoborus/tender.vim'
+Plug 'nanotech/jellybeans.vim'
 
 call plug#end()
 
@@ -56,8 +56,10 @@ if has("autocmd")
 endif
 
 " colorscheme
-syntax enable
-colorscheme tender
+let g:jellybeans_overrides = {
+\    'background': { 'guibg': '000000' },
+\}
+colorscheme jellybeans
 
 " status line
 set laststatus=2
