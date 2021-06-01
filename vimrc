@@ -63,7 +63,7 @@ colorscheme jellybeans
 
 " status line
 set laststatus=2
-set statusline=%f\ %m%=\ %{&fileencoding?&fileencoding:&encoding}\ \|\ %{&ft}\ \|\ %{&fileformat}\ \|\ %3l:%-3c\ \|\ %3p%%\ 
+set ruler
 
 " Makefile
 let _curfile=expand("%:r")
