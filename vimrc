@@ -1,28 +1,4 @@
-" vim-plug
-if empty(glob('~/.vim/autoload/plug.vim'))
-    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
-call plug#begin('~/.vim/plugged')
-
-Plug 'Shougo/unite.vim'
-Plug 'shougo/vimfiler.vim'
-Plug 'hashivim/vim-terraform'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
-Plug 'mattn/vim-goimports'
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-Plug 'cohama/lexima.vim'
-Plug 'tpope/vim-commentary'
-
-call plug#end()
-
-" basic configuration
+colorscheme slate
 set fenc=utf-8
 set nowritebackup
 set nobackup
@@ -42,22 +18,13 @@ set softtabstop=4
 set tabstop=4
 set clipboard=unnamed,autoselect
 set shortmess-=S
+set laststatus=2
+set ruler
 set nocursorline 
-colorscheme slate
 
 if has("autocmd")
     autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
     autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
-endif
-
-" status line
-set laststatus=2
-set ruler
-
-" Makefile
-let _curfile=expand("%:r")
-if _curfile == 'Makefile'
-    set noexpandtab
 endif
 
 " Terraform
@@ -87,3 +54,21 @@ augroup lsp_install
     autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
 let g:lsp_diagnostics_enabled = 0
+
+" vim-plug
+call plug#begin('~/.vim/plugged')
+
+Plug 'Shougo/unite.vim'
+Plug 'shougo/vimfiler.vim'
+Plug 'hashivim/vim-terraform'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'mattn/vim-goimports'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'cohama/lexima.vim'
+Plug 'tpope/vim-commentary'
+
+call plug#end()
