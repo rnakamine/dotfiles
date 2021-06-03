@@ -19,7 +19,6 @@ Plug 'mattn/vim-goimports'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'cohama/lexima.vim'
 Plug 'tpope/vim-commentary'
-Plug 'jacoborus/tender.vim'
 
 call plug#end()
 
@@ -43,25 +42,17 @@ set softtabstop=4
 set tabstop=4
 set clipboard=unnamed,autoselect
 set shortmess-=S
-
-if has('vim_starting')
-    let &t_SI .= "\e[6 q"
-    let &t_EI .= "\e[2 q"
-    let &t_SR .= "\e[4 q"
-endif
+set nocursorline 
+colorscheme slate
 
 if has("autocmd")
     autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
     autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
 endif
 
-" color scheme
-syntax enable
-colorscheme tender
-
 " status line
 set laststatus=2
-set statusline=%f\ %m%=\ %{&fileencoding?&fileencoding:&encoding}\ \|\ %{&ft}\ \|\ %{&fileformat}\ \|\ %3l:%-3c\ \|\ %3p%%\
+set ruler
 
 " Makefile
 let _curfile=expand("%:r")
