@@ -19,7 +19,7 @@ Plug 'mattn/vim-goimports'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'cohama/lexima.vim'
 Plug 'tpope/vim-commentary'
-Plug 'nanotech/jellybeans.vim'
+Plug 'jacoborus/tender.vim'
 
 call plug#end()
 
@@ -55,15 +55,13 @@ if has("autocmd")
     autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
 endif
 
-" colorscheme
-let g:jellybeans_overrides = {
-\    'background': { 'guibg': '000000' },
-\}
-colorscheme jellybeans
+" color scheme
+syntax enable
+colorscheme tender
 
 " status line
 set laststatus=2
-set ruler
+set statusline=%f\ %m%=\ %{&fileencoding?&fileencoding:&encoding}\ \|\ %{&ft}\ \|\ %{&fileformat}\ \|\ %3l:%-3c\ \|\ %3p%%\
 
 " Makefile
 let _curfile=expand("%:r")
