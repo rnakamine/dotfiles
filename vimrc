@@ -27,6 +27,13 @@ if has("autocmd")
     autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
 endif
 
+" netrw
+let g:netrw_liststyle=1
+let g:netrw_banner=0
+let g:netrw_timefmt="%Y/%m/%d(%a) %H:%M:%S"
+let g:netrw_cursor=0
+let g:netrw_sizestyle="H"
+
 " Terraform
 let g:terraform_align=1
 let g:terraform_fmt_on_save=1
@@ -58,8 +65,6 @@ let g:lsp_diagnostics_enabled = 0
 " vim-plug
 call plug#begin('~/.vim/plugged')
 
-Plug 'Shougo/unite.vim'
-Plug 'shougo/vimfiler.vim'
 Plug 'hashivim/vim-terraform'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
