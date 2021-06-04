@@ -39,9 +39,6 @@ let g:netrw_liststyle = 3
 let g:terraform_align=1
 let g:terraform_fmt_on_save=1
 
-" VimFiler
-let g:vimfiler_as_default_explorer=1
-
 " vim-lsp
 function! s:on_lsp_buffer_enabled() abort
     setlocal omnifunc=lsp#complete
