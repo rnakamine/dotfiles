@@ -35,7 +35,7 @@ let g:netrw_cursor=0
 let g:netrw_sizestyle="H"
 let g:netrw_liststyle = 3
 
-" Terraform
+" vim-terraform
 let g:terraform_align=1
 let g:terraform_fmt_on_save=1
 
