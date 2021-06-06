@@ -1,4 +1,3 @@
-colorscheme slate
 set fenc=utf-8
 set nowritebackup
 set nobackup
