@@ -18,16 +18,39 @@ set tabstop=4
 set clipboard=unnamed,autoselect
 set shortmess-=S
 set laststatus=2
-set ruler
-set nocursorline 
+set statusline=%f\ %m%=\ %{&fileencoding?&fileencoding:&encoding}\ \|\ %{&ft}\ \|\ %{&fileformat}\ \|\ %3l:%-3c\ \|\ %3p%%\ 
 
-colorscheme slate
+if has('vim_starting')
+    let &t_SI .= "\e[6 q"
+    let &t_EI .= "\e[2 q"
+    let &t_SR .= "\e[4 q"
+endif
 
 if has("autocmd")
-    autocmd VimEnter * highlight ModeMsg ctermfg=white guifg=white
     autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
     autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
 endif
+
+" vim-plug
+call plug#begin('~/.vim/plugged')
+
+Plug 'hashivim/vim-terraform'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'mattn/vim-goimports'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'cohama/lexima.vim'
+Plug 'tpope/vim-commentary'
+Plug 'jacoborus/tender.vim'
+
+call plug#end()
+
+" Theme
+syntax enable
+colorscheme tender
 
 " netrw
 let g:netrw_liststyle=1
@@ -62,18 +85,3 @@ augroup lsp_install
 augroup END
 let g:lsp_diagnostics_enabled = 0
 
-" vim-plug
-call plug#begin('~/.vim/plugged')
-
-Plug 'hashivim/vim-terraform'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
-Plug 'mattn/vim-goimports'
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
-Plug 'cohama/lexima.vim'
-Plug 'tpope/vim-commentary'
-
-call plug#end()
