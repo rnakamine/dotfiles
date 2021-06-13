@@ -15,6 +15,15 @@ ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
 PROMPT="$CURRENT_DIRECTORY $CURRENT_BRANCH %{$reset_color%}
 $ "
 
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/"
+[ -n "$PS1" ] && \
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+        eval "$("$BASE16_SHELL/profile_helper.sh")"
+
+setopt +o nomatch 
+export PATH="$HOME/bin:$PATH"
+
 # go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
@@ -24,32 +33,23 @@ export GO111MODULE=on
 alias g='cd $(ghq root)/$(ghq list | peco)'
 alias gh='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
 
-# pyenv
-export PYENV_ROOT=$HOME/.pyenv
-export PATH=$PYENV_ROOT/bin:$PATH
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init --path)"
-fi
+# # pyenv
+# export PYENV_ROOT=$HOME/.pyenv
+# export PATH=$PYENV_ROOT/bin:$PATH
+# if command -v pyenv 1>/dev/null 2>&1; then
+#   eval "$(pyenv init --path)"
+# fi
 
-# rbenv
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-eval "$(rbenv init -)"
+# # rbenv
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
+# eval "$(rbenv init -)"
 
 # nodebrew
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 
-# tabtab source for packages
-# uninstall by removing these lines
-[[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
-
-export PATH="$HOME/bin:$PATH"
-
-# bmfzf
-alias chr='open -a "/Applications/Google Chrome.app" $(bmfzf)'
-
 # docker-compose
-alias dc='docker-compose'
+alias dc='docker compose'
 
 # git
 alias ga='git add'
@@ -60,36 +60,10 @@ alias gco='git checkout'
 # venv
 alias venv='. venv/bin/activate'
 
-# tmux
-# t () {
-# 	tmux attach -t $1 2> /dev/null || tmux new -s $1 2> /dev/null || tmux ls
-# }
-
-setopt +o nomatch 
-
 # direnv
 export EDITOR=vi
 eval "$(direnv hook zsh)"
 alias direnv='direnv edit .'
-
-# setting AZURE_STORAGE_CONNECTION_STRING
-set-azstg() {
-    NAME=$(az storage account list --query [].name --output tsv | peco)
-    echo Setting the value of AZURE_STORAGE_CONNECTION_STRING to $NAME ..
-    RESOURCE_GROUP=$(az storage account list --query [].[name,resourceGroup] --output tsv | grep ${NAME} | awk '{print $2}')
-    export AZURE_STORAGE_CONNECTION_STRING=$(az storage account show-connection-string -g ${RESOURCE_GROUP} -n ${NAME} --output tsv | awk '{print $1}')
-    echo Done.
-}
-
-# show grobal ip
-alias showip='curl ipaddr.show'
-
-# reset venv
-venv-reset() {
-    deactivate
-    python -m venv --clear venv
-    source venv/bin/activate
-}
 
 # trash-cli
 if type trash-put &> /dev/null
