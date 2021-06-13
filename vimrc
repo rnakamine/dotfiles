@@ -44,13 +44,14 @@ Plug 'mattn/vim-goimports'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'cohama/lexima.vim'
 Plug 'tpope/vim-commentary'
-Plug 'jacoborus/tender.vim'
+Plug 'chriskempson/base16-vim'
 
 call plug#end()
 
 " Theme
-syntax enable
-colorscheme tender
+let base16colorspace=256
+set termguicolors
+colorscheme base16-default-dark
 
 " netrw
 let g:netrw_liststyle=1
