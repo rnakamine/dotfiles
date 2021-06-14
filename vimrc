@@ -18,7 +18,7 @@ set tabstop=4
 set clipboard=unnamed,autoselect
 set shortmess-=S
 set laststatus=2
-set statusline=%f\ %m%=\ %{&fileencoding?&fileencoding:&encoding}\ \|\ %{&ft}\ \|\ %{&fileformat}\ \|\ %3l:%-3c\ \|\ %3p%%\ 
+set ruler
 
 if has('vim_starting')
     let &t_SI .= "\e[6 q"
