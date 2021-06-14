@@ -31,6 +31,14 @@ if has("autocmd")
     autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
 endif
 
+" netrw
+let g:netrw_liststyle=1
+let g:netrw_banner=0
+let g:netrw_timefmt="%Y/%m/%d(%a) %H:%M:%S"
+let g:netrw_cursor=0
+let g:netrw_sizestyle="H"
+let g:netrw_liststyle = 3
+
 " vim-plug
 call plug#begin('~/.vim/plugged')
 
@@ -48,18 +56,9 @@ Plug 'chriskempson/base16-vim'
 
 call plug#end()
 
-" Theme
+" base16-vim
 let base16colorspace=256
-set termguicolors
 colorscheme base16-default-dark
-
-" netrw
-let g:netrw_liststyle=1
-let g:netrw_banner=0
-let g:netrw_timefmt="%Y/%m/%d(%a) %H:%M:%S"
-let g:netrw_cursor=0
-let g:netrw_sizestyle="H"
-let g:netrw_liststyle = 3
 
 " vim-terraform
 let g:terraform_align=1
