@@ -33,17 +33,17 @@ export GO111MODULE=on
 alias g='cd $(ghq root)/$(ghq list | peco)'
 alias gh='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
 
-# # pyenv
-# export PYENV_ROOT=$HOME/.pyenv
-# export PATH=$PYENV_ROOT/bin:$PATH
-# if command -v pyenv 1>/dev/null 2>&1; then
-#   eval "$(pyenv init --path)"
-# fi
+# pyenv
+export PYENV_ROOT=$HOME/.pyenv
+export PATH=$PYENV_ROOT/bin:$PATH
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init --path)"
+fi
 
-# # rbenv
-# eval "$(pyenv init -)"
-# eval "$(pyenv virtualenv-init -)"
-# eval "$(rbenv init -)"
+# rbenv
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+eval "$(rbenv init -)"
 
 # nodebrew
 export PATH=$HOME/.nodebrew/current/bin:$PATH
@@ -64,9 +64,3 @@ alias venv='. venv/bin/activate'
 export EDITOR=vi
 eval "$(direnv hook zsh)"
 alias direnv='direnv edit .'
-
-# trash-cli
-if type trash-put &> /dev/null
-then
-    alias rm=trash-put
-fi
