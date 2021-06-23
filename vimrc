@@ -19,6 +19,8 @@ set clipboard=unnamed,autoselect
 set shortmess-=S
 set laststatus=2
 set ruler
+set splitbelow
+set splitright
 
 if has('vim_starting')
     let &t_SI .= "\e[6 q"
