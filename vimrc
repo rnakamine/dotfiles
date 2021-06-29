@@ -55,6 +55,7 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'cohama/lexima.vim'
 Plug 'tpope/vim-commentary'
 Plug 'chriskempson/base16-vim'
+Plug 'mattn/vim-sonictemplate'
 
 call plug#end()
 
