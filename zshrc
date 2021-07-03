@@ -1,3 +1,6 @@
+fpath=(/usr/local/share/zsh/functions ${fpath})
+for f (~/Development/src/github.com/rnakamine/dotfiles/zsh/function/*.zsh) source "${f}"
+
 bindkey -e
 setopt +o nomatch 
 export PATH="$HOME/bin:$PATH"
@@ -39,18 +42,6 @@ export GO111MODULE=on
 alias g='cd $(ghq root)/$(ghq list | peco)'
 alias gh='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
 
-# # pyenv
-# export PYENV_ROOT=$HOME/.pyenv
-# export PATH=$PYENV_ROOT/bin:$PATH
-# if command -v pyenv 1>/dev/null 2>&1; then
-#   eval "$(pyenv init --path)"
-# fi
-
-# # rbenv
-# eval "$(pyenv init -)"
-# eval "$(pyenv virtualenv-init -)"
-# eval "$(rbenv init -)"
-
 # alias
 alias ls='ls -G'
 alias ll='ls -l'
@@ -64,11 +55,6 @@ alias gpo='git push origin'
 alias gco='git checkout'
 
 alias venv='. venv/bin/activate'
-
-# direnv
-export EDITOR=vi
-eval "$(direnv hook zsh)"
-alias direnv='direnv edit .'
 
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/"
