@@ -14,8 +14,10 @@ export PATH="$HOME/bin:$PATH"
 
 # Prompt
 autoload -Uz vcs_info
+
 setopt prompt_subst
 setopt prompt_percent
+
 zstyle ':vcs_info:git:*' check-for-changes true
 zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
 zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
@@ -27,8 +29,10 @@ $ '
 
 # Completion
 autoload -U compinit && compinit
+
 setopt auto_list
 setopt list_packed
+
 zstyle ':completion:*' verbose yes
 zstyle ':completion:*:descriptions' format '%B%d%b'
 zstyle ':completion:*:default' menu select=1
@@ -37,8 +41,10 @@ zstyle ':completion:*:default' menu select=1
 HISTFILE=~/.zsh_history
 HISTSIZE=100000
 SAVEHIST=100000
+
 setopt hist_ignore_dups
 setopt share_history
+
 autoload history-search-end
 zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
