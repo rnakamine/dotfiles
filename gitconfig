@@ -1,12 +1,12 @@
 [user]
-	name = Ryo Nakamine
-	email = rnakamine8080@gmail.com
+    name = Ryo Nakamine
+    email = rnakamine8080@gmail.com
 
 [include]
     path = ~/.gitconfig.local
 
 [ghq]
-	root = ~/src
+    root = ~/src
 
 [core]
-	editor = vi
+    editor = vi
