@@ -7,6 +7,7 @@ CONFIGS=(
   vimrc
   tmux.conf
   gitconfig
+  gitignore_global
   vim/autoload/plug.vim
 )
 
