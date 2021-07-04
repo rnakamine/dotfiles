@@ -3,12 +3,12 @@
 DIR=$(cd $(dirname $0)/.. && pwd)
 
 CONFIGS=(
-  zshrc
+  vim
   vimrc
+  zshrc
   tmux.conf
   gitconfig
   gitignore_global
-  vim
 )
 
 for CONFIG in ${CONFIGS[@]}
