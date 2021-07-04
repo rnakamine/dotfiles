@@ -4,7 +4,7 @@
 
 rnakamine's dotfiles
 
-## Setup
+## Initialize
 1. Clone repository
 ```
 mkdir -p ~/src/github.com/rnakamine/
@@ -18,7 +18,7 @@ cd dotfiles/
 git submodule init && git submodule update
 ```
 
-## Run script
+## Run setup script
 ```
 ./script/install.sh
 ./script/brew.sh
