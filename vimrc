@@ -51,6 +51,7 @@ Plug 'cohama/lexima.vim'
 Plug 'tpope/vim-commentary'
 Plug 'chriskempson/base16-vim'
 Plug 'mattn/vim-sonictemplate'
+Plug 'rodjek/vim-puppet'
 
 call plug#end()
 
