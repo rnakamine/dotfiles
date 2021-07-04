@@ -10,7 +10,7 @@ git clone https://github.com/rnakamine/dotfiles.git
 git submodule init
 ```
 
-## Run Script
+## Run script
 ```
 ./script/install.sh
 ./script/brew.sh
