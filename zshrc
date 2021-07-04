@@ -10,7 +10,6 @@ for f (~/Development/src/github.com/rnakamine/dotfiles/zsh/function/*.zsh) sourc
 bindkey -e
 setopt nobeep
 setopt +o nomatch 
-export PATH="$HOME/bin:$PATH"
 
 # Prompt
 autoload -Uz vcs_info
