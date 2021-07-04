@@ -7,6 +7,7 @@ CONFIGS=(
   vimrc
   tmux.conf
   gitconfig
+  vim/autoload/plug.vim
 )
 
 for CONFIG in ${CONFIGS[@]}
