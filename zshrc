@@ -11,6 +11,9 @@ bindkey -e
 setopt nobeep
 setopt +o nomatch 
 
+export LDFLAGS="-L/usr/local/opt/zlib/lib -L/usr/local/opt/bzip2/lib"
+export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
+
 # Prompt
 autoload -Uz vcs_info
 

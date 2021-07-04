@@ -1,5 +1,3 @@
-#!/bin/sh
-
 if test ! $(which brew); then
     echo "[INFO] Installing homebrew."
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -36,6 +34,8 @@ formula=(
     pyenv
     direnv
     htop
+    zlib
+    bzip2
 )
 brew install ${formula[@]} && brew cleanup
 
