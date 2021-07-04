@@ -1,0 +1,9 @@
+*.o
+\#*#
+*#
+.#*
+.*~
+*~localrc.vim
+.DS_Store
+.tmp/*
+*.zwc

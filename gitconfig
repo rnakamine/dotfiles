@@ -2,6 +2,9 @@
 	name = Ryo Nakamine
 	email = rnakamine8080@gmail.com
 
+[include]
+    path = ~/.gitconfig.local
+
 [ghq]
 	root = ~/Development/src
 
