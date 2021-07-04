@@ -5,7 +5,7 @@ if [ ! -f ~/.zshrc.zwc -o ~/.zshrc -nt ~/.zshrc.zwc ]; then
 fi
 
 fpath=(/usr/local/share/zsh/functions ${fpath})
-for f (~/Development/src/github.com/rnakamine/dotfiles/zsh/function/*.zsh) source "${f}"
+for f (~/src/github.com/rnakamine/dotfiles/zsh/function/*.zsh) source "${f}"
 
 bindkey -e
 setopt nobeep

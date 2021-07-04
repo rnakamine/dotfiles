@@ -8,7 +8,7 @@ CONFIGS=(
   tmux.conf
   gitconfig
   gitignore_global
-  vim/autoload/plug.vim
+  vim
 )
 
 for CONFIG in ${CONFIGS[@]}
