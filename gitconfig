@@ -6,7 +6,7 @@
     path = ~/.gitconfig.local
 
 [ghq]
-	root = ~/Development/src
+	root = ~/src
 
 [core]
 	editor = vi
