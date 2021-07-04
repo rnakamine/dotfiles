@@ -1,6 +1,19 @@
+#!/bin/sh
+
 if test ! $(which brew); then
     echo "[INFO] Installing homebrew."
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+printf "Update recipes? [Y/n]: " && read flag
+if [ "${flag}" = "y" ] || [ "${flag}" = "Y" ]; then
+    brew update
+fi
+
+printf "Upgrade? [Y/n]: " && read flag
+if [ "${flag}" = "y" ] || [ "${flag}" = "Y" ]; then
+    brew update
+    brew upgrade
 fi
 
 # https://formulae.brew.sh/formula/
@@ -13,9 +26,7 @@ formula=(
     tmux
     hub 
     tig
-    cask
     go
-    rmtrash       
     jq
     peco   
     ghq
@@ -23,14 +34,16 @@ formula=(
     rbenv
     pyenv
     direnv
+    htop
 )
 brew install ${formula[@]} && brew cleanup
 
 # https://github.com/Homebrew/homebrew-cask
 echo "[INFO] Installing casks."
 casks=(
-     visual-studio-code
-     vagrant
-     docker
+    docker
+    vagrant
+    virtualbox
+    visual-studio-code
 )
-brew cask install ${casks[@]} && brew cleanup
+brew install --cask ${casks[@]} && brew cleanup
