@@ -8,7 +8,6 @@ CONFIGS=(
   gitconfig
   gitignore_global
 )
-
 for CONFIG in ${CONFIGS[@]}
 do
   if [ ! -f ${HOME}/.${CONFIG} ]; then
