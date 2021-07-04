@@ -30,6 +30,7 @@ formula=(
     jq
     peco   
     ghq
+    git
     tfenv
     rbenv
     pyenv
