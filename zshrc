@@ -26,7 +26,7 @@ zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
 zstyle ':vcs_info:*' formats '[%b] %c%u'
 zstyle ':vcs_info:*' actionformats '[%b|%a]'
 precmd () { vcs_info }
-PROMPT='%F{cyan}%~ %F{blue}${vcs_info_msg_0_}%f
+PROMPT='%~ %F{blue}${vcs_info_msg_0_}%f
 $ '
 
 # Completion
