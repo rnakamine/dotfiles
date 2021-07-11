@@ -10,7 +10,7 @@ CONFIGS=(
 )
 for CONFIG in ${CONFIGS[@]}
 do
-  if [ ! -f ${HOME}/.${CONFIG} ]; then
+  if [ ! -e ${HOME}/.${CONFIG} ]; then
     echo "[INFO] Place ${HOME}/.${CONFIG}"
     ln -s ${DIR}/${CONFIG} ${HOME}/.${CONFIG}
   fi
