@@ -76,6 +76,8 @@ alias gco='git checkout'
 
 alias venv='. venv/bin/activate'
 
+alias ec='envchain'
+
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/"
 [ -n "$PS1" ] && \

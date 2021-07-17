@@ -39,7 +39,6 @@ let g:netrw_liststyle = 3
 " vim-plug
 call plug#begin('~/.vim/plugged')
 
-Plug 'hashivim/vim-terraform'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'prabirshrestha/async.vim'
@@ -53,6 +52,8 @@ Plug 'chriskempson/base16-vim'
 Plug 'mattn/vim-sonictemplate'
 Plug 'rodjek/vim-puppet'
 Plug 'hashivim/vim-vagrant'
+Plug 'hashivim/vim-terraform'
+Plug 'vim-syntastic/syntastic'
 
 call plug#end()
 

@@ -36,6 +36,7 @@ formula=(
     htop
     zlib
     bzip2
+    git-secrets
 )
 brew install ${formula[@]} && brew cleanup
 
