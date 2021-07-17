@@ -28,14 +28,6 @@ if has('vim_starting')
     let &t_SR .= "\e[4 q"
 endif
 
-" netrw
-let g:netrw_liststyle=1
-let g:netrw_banner=0
-let g:netrw_timefmt="%Y/%m/%d(%a) %H:%M:%S"
-let g:netrw_cursor=0
-let g:netrw_sizestyle="H"
-let g:netrw_liststyle = 3
-
 " vim-plug
 call plug#begin('~/.vim/plugged')
 
@@ -54,6 +46,8 @@ Plug 'rodjek/vim-puppet'
 Plug 'hashivim/vim-vagrant'
 Plug 'hashivim/vim-terraform'
 Plug 'vim-syntastic/syntastic'
+Plug 'Shougo/unite.vim'
+Plug 'Shougo/vimfiler.vim'
 
 call plug#end()
 
@@ -64,6 +58,10 @@ colorscheme base16-default-dark
 " vim-terraform
 let g:terraform_align=1
 let g:terraform_fmt_on_save=1
+
+" vimfiler
+let g:vimfiler_as_default_explorer = 1
+nnoremap fe :VimFilerExplorer -winwidth=50 -toggle<CR>
 
 " vim-lsp
 function! s:on_lsp_buffer_enabled() abort
