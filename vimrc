@@ -61,6 +61,7 @@ let g:terraform_fmt_on_save=1
 
 " vimfiler
 let g:vimfiler_as_default_explorer = 1
+nnoremap fd :VimFilerBufferDir <CR>
 nnoremap fe :VimFilerExplorer -winwidth=50 -toggle<CR>
 
 " vim-lsp
