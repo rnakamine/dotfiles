@@ -28,6 +28,10 @@ if has('vim_starting')
     let &t_SR .= "\e[4 q"
 endif
 
+if has("autocmd")
+    autocmd FileType json setlocal ts=2 sts=2 sw=2 expandtab
+endif
+
 " vim-plug
 call plug#begin('~/.vim/plugged')
 
