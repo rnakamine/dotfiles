@@ -21,7 +21,7 @@ setopt prompt_subst
 setopt prompt_percent
 
 zstyle ':vcs_info:git:*' check-for-changes true
-zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
+zstyle ':vcs_info:git:*' stagedstr "%F{red}!"
 zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
 zstyle ':vcs_info:*' formats '[%b] %c%u'
 zstyle ':vcs_info:*' actionformats '[%b|%a]'
