@@ -22,12 +22,6 @@ set ruler
 set splitbelow
 set splitright
 
-if has('vim_starting')
-    let &t_SI .= "\e[6 q"
-    let &t_EI .= "\e[2 q"
-    let &t_SR .= "\e[4 q"
-endif
-
 if has("autocmd")
     autocmd FileType json setlocal ts=2 sts=2 sw=2 expandtab
 endif
