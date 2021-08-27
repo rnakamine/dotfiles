@@ -22,12 +22,6 @@ set ruler
 set splitbelow
 set splitright
 
-if has('vim_starting')
-    let &t_SI .= "\e[6 q"
-    let &t_EI .= "\e[2 q"
-    let &t_SR .= "\e[4 q"
-endif
-
 if has("autocmd")
     autocmd FileType json setlocal ts=2 sts=2 sw=2 expandtab
 endif
@@ -44,6 +38,7 @@ Plug 'mattn/vim-goimports'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'cohama/lexima.vim'
 Plug 'tpope/vim-commentary'
+Plug 'chriskempson/base16-vim'
 Plug 'mattn/vim-sonictemplate'
 Plug 'rodjek/vim-puppet'
 Plug 'hashivim/vim-vagrant'
@@ -51,13 +46,12 @@ Plug 'hashivim/vim-terraform'
 Plug 'vim-syntastic/syntastic'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimfiler.vim'
-Plug 'jacoborus/tender.vim'
 
 call plug#end()
 
-" Theme
-syntax enable
-colorscheme tender
+" base16-vim
+let base16colorspace=256
+colorscheme base16-default-dark
 
 " vim-terraform
 let g:terraform_align=1
