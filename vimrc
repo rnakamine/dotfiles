@@ -51,13 +51,13 @@ Plug 'hashivim/vim-terraform'
 Plug 'vim-syntastic/syntastic'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimfiler.vim'
-Plug 'jacoborus/tender.vim'
+Plug 'chriskempson/base16-vim'
 
 call plug#end()
 
-" Theme
-syntax enable
-colorscheme tender
+" base16-vim
+let base16colorspace=256
+colorscheme base16-default-dark
 
 " vim-terraform
 let g:terraform_align=1

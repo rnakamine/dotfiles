@@ -16,4 +16,10 @@ do
   fi
 done
 
+if [ ! -d "${HOME}/.config/base16-shell" ]; then
+    mkdir -p ${HOME}/.config/
+    ln -s ${DIR}/zsh/base16-shell ${HOME}/.config/
+    echo "[INFO] Setup base16shell is complete."
+fi
+
 echo "[INFO] Done."
