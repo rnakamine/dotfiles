@@ -1,3 +1,7 @@
 [submodule "zsh/base16-shell"]
 	path = zsh/base16-shell
 	url = https://github.com/chriskempson/base16-shell
+
+[submodule "tmux/kube-tmux"]
+	path = tmux/kube-tmux
+	url = https://github.com/jonmosco/kube-tmux.git

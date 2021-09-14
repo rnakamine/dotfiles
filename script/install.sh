@@ -4,6 +4,7 @@ CONFIGS=(
   vim
   vimrc
   zshrc
+  tmux
   tmux.conf
   gitconfig
   gitignore_global
