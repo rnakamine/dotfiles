@@ -17,16 +17,19 @@ export CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/bzip2/include"
 # Prompt
 autoload -Uz vcs_info
 
+source /usr/local/opt/kube-ps1/share/kube-ps1.sh
+
 setopt prompt_subst
 setopt prompt_percent
 
 zstyle ':vcs_info:git:*' check-for-changes true
-zstyle ':vcs_info:git:*' stagedstr "%F{red}!"
-zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
+zstyle ':vcs_info:git:*' stagedstr "%F{red}! "
+zstyle ':vcs_info:git:*' unstagedstr "%F{red}+ "
 zstyle ':vcs_info:*' formats '[%b] %c%u'
 zstyle ':vcs_info:*' actionformats '[%b|%a]'
 precmd () { vcs_info }
-PROMPT='%~ %F{blue}${vcs_info_msg_0_}%f
+PROMPT=''
+PROMPT='%~ %F{blue}${vcs_info_msg_0_}%f`kube_ps1`
 $ '
 
 # Completion
