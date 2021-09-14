@@ -68,6 +68,8 @@ alias ls='ls -G'
 alias ll='ls -l'
 alias l='ls -la'
 
+alias k='kubectl'
+
 alias dc='docker compose'
 
 alias gst='git status'
