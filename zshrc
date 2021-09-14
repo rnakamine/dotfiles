@@ -69,6 +69,8 @@ alias ll='ls -l'
 alias l='ls -la'
 
 alias k='kubectl'
+alias kx='kubectx | peco | xargs kubectx'
+alias kns='kubens | peco | xargs kubens'
 
 alias dc='docker compose'
 
