@@ -59,10 +59,11 @@ Plug 'junegunn/fzf.vim'
 call plug#end()
 
 " Defx
-nnoremap fd :Defx -toggle<CR>
+nnoremap fd :Defx<CR>
 call defx#custom#option('_', {
     \ 'show_ignored_files': 1,
     \ 'resume': 1,
+    \ 'toggle': 1,
     \ })
 autocmd FileType defx call s:defx_mappings()
 function! s:defx_mappings() abort
