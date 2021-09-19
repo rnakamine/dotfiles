@@ -64,6 +64,9 @@ alias g='cd $(ghq list -p | peco)'
 alias gh='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
 
 # alias
+alias vi='nvim'
+alias vim='nvim'
+
 alias ls='ls -G'
 alias ll='ls -l'
 alias l='ls -la'
@@ -80,8 +83,6 @@ alias gpo='git push origin'
 alias gco='git checkout'
 
 alias venv='. venv/bin/activate'
-
-alias ec='envchain'
 
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/"

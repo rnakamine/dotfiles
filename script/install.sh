@@ -2,7 +2,6 @@ DIR=$(cd $(dirname $0)/.. && pwd)
 
 CONFIGS=(
   vim
-  vimrc
   zshrc
   tmux
   tmux.conf
@@ -17,10 +16,21 @@ do
   fi
 done
 
+# Neovim
+if [ ! -d "${HOME}/.config/nvim" ]; then
+    mkdir -p ${HOME}/.config/
+    ln -s ${DIR}/nvim ${HOME}/.config/
+    # Install vim-plug
+    curl -sS -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dir \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    echo "[INFO] Setup NeoVim is complete."
+fi
+
+# Base16 Shell
 if [ ! -d "${HOME}/.config/base16-shell" ]; then
     mkdir -p ${HOME}/.config/
     ln -s ${DIR}/zsh/base16-shell ${HOME}/.config/
-    echo "[INFO] Setup base16shell is complete."
+    echo "[INFO] Setup Base16 Shell is complete."
 fi
 
 echo "[INFO] Done."

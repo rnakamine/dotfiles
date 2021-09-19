@@ -5,5 +5,5 @@
     root = ~/src
 
 [core]
-    editor = vi
+    editor = nvim
     excludesfile = ~/.gitignore_global
