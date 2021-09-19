@@ -58,39 +58,8 @@ Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
-" base16-vim
-let base16colorspace=256
-colorscheme base16-default-dark
-
-" vim-terraform
-let g:terraform_align=1
-let g:terraform_fmt_on_save=1
-
-
-" vim-lsp
-function! s:on_lsp_buffer_enabled() abort
-    setlocal omnifunc=lsp#complete
-    if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
-    nmap <buffer> gd <plug>(lsp-definition)
-    nmap <buffer> gr <plug>(lsp-references)
-    nmap <buffer> gi <plug>(lsp-implementation)
-    " nmap <buffer> gt <plug>(lsp-type-definition)
-    nmap <buffer> <leader>rn <plug>(lsp-rename)
-    nmap <buffer> [g <Plug>(lsp-previous-diagnostic)
-    nmap <buffer> ]g <Plug>(lsp-next-diagnostic)
-    nmap <buffer> K <plug>(lsp-hover)
-    autocmd BufWritePre <buffer> LspDocumentFormatSync
-endfunction
-augroup lsp_install
-    au!
-    " call s:on_lsp_buffer_enabled only for languages that has the server registered.
-    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
-augroup END
-let g:lsp_diagnostics_enabled = 0
-let g:lsp_document_code_action_signs_enabled = 0
-
 " Defx
-nnoremap fd :Defx <CR>
+nnoremap fd :Defx -toggle<CR>
 call defx#custom#option('_', {
     \ 'show_ignored_files': 1,
     \ 'resume': 1,
@@ -107,6 +76,8 @@ function! s:defx_mappings() abort
     \ defx#do_action('paste')
     nnoremap <silent><buffer><expr> l
     \ defx#do_action('open')
+    nnoremap <silent><buffer><expr> t
+    \ defx#do_action('open','tabnew')
     nnoremap <silent><buffer><expr> E
     \ defx#do_action('open', 'vsplit')
     nnoremap <silent><buffer><expr> P
@@ -161,6 +132,37 @@ function! s:defx_mappings() abort
 endfunction
 autocmd BufWritePost * call defx#redraw()
 autocmd BufEnter * call defx#redraw()
+
+" base16-vim
+let base16colorspace=256
+colorscheme base16-default-dark
+
+" vim-terraform
+let g:terraform_align=1
+let g:terraform_fmt_on_save=1
+
+
+" vim-lsp
+function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+    if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+    nmap <buffer> gd <plug>(lsp-definition)
+    nmap <buffer> gr <plug>(lsp-references)
+    nmap <buffer> gi <plug>(lsp-implementation)
+    " nmap <buffer> gt <plug>(lsp-type-definition)
+    nmap <buffer> <leader>rn <plug>(lsp-rename)
+    nmap <buffer> [g <Plug>(lsp-previous-diagnostic)
+    nmap <buffer> ]g <Plug>(lsp-next-diagnostic)
+    nmap <buffer> K <plug>(lsp-hover)
+    autocmd BufWritePre <buffer> LspDocumentFormatSync
+endfunction
+augroup lsp_install
+    au!
+    " call s:on_lsp_buffer_enabled only for languages that has the server registered.
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
+let g:lsp_diagnostics_enabled = 0
+let g:lsp_document_code_action_signs_enabled = 0
 
 " fzf
 let $FZF_DEFAULT_OPTS="--layout=reverse"
