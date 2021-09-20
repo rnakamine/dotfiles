@@ -13,11 +13,3 @@ eval "$(pyenv init -)"
 #     rbenv "$@"
 # }
 eval "$(rbenv init -)"
-
-# direnv() {
-#     unfunction direnv
-#     source <(direnv hook zsh)
-#     direnv "$@"
-# }
-export EDITOR=vim
-eval "$(direnv hook zsh)"
