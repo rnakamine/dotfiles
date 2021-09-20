@@ -75,8 +75,8 @@ function! s:defx_mappings() abort
     \ defx#do_action('move')
     nnoremap <silent><buffer><expr> p
     \ defx#do_action('paste')
-    nnoremap <silent><buffer><expr> l
-    \ defx#do_action('open')
+    " nnoremap <silent><buffer><expr> l
+    " \ defx#do_action('open')
     nnoremap <silent><buffer><expr> t
     \ defx#do_action('open','tabnew')
     nnoremap <silent><buffer><expr> E
@@ -110,8 +110,8 @@ function! s:defx_mappings() abort
     \ defx#do_action('toggle_ignored_files')
     nnoremap <silent><buffer><expr> ;
     \ defx#do_action('repeat')
-    nnoremap <silent><buffer><expr> h
-    \ defx#do_action('cd', ['..'])
+    " nnoremap <silent><buffer><expr> h
+    " \ defx#do_action('cd', ['..'])
     nnoremap <silent><buffer><expr> ~
     \ defx#do_action('cd')
     nnoremap <silent><buffer><expr> q

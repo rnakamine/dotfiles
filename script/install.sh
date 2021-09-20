@@ -23,7 +23,7 @@ if [ ! -d "${HOME}/.config/nvim" ]; then
     # Install vim-plug
     curl -sS -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dir \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    echo "[INFO] Setup NeoVim is complete."
+    echo "[INFO] Setup Neovim is complete."
 fi
 
 # Base16 Shell
