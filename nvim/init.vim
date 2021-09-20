@@ -68,6 +68,8 @@ call defx#custom#option('_', {
 autocmd FileType defx call s:defx_mappings()
 function! s:defx_mappings() abort
     nnoremap <silent><buffer><expr> <CR>
+    \ defx#is_directory() ?
+    \ defx#do_action('open_tree', 'toggle') :
     \ defx#do_action('open')
     nnoremap <silent><buffer><expr> c
     \ defx#do_action('copy')
@@ -81,8 +83,10 @@ function! s:defx_mappings() abort
     \ defx#do_action('open')
     nnoremap <silent><buffer><expr> t
     \ defx#do_action('open','tabnew')
-    nnoremap <silent><buffer><expr> E
+    nnoremap <silent><buffer><expr> V
     \ defx#do_action('open', 'vsplit')
+    nnoremap <silent><buffer><expr> X
+    \ defx#do_action('open', 'split')
     nnoremap <silent><buffer><expr> P
     \ defx#do_action('preview')
     nnoremap <silent><buffer><expr> o
