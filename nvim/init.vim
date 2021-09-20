@@ -76,7 +76,9 @@ function! s:defx_mappings() abort
     nnoremap <silent><buffer><expr> p
     \ defx#do_action('paste')
     nnoremap <silent><buffer><expr> l
-    \ defx#do_action('open_tree')
+    \ defx#is_directory() ?
+    \ defx#do_action('open_tree') :
+    \ defx#do_action('open')
     nnoremap <silent><buffer><expr> t
     \ defx#do_action('open','tabnew')
     nnoremap <silent><buffer><expr> E
