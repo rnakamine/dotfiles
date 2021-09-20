@@ -136,7 +136,7 @@ endfunction
 autocmd BufWritePost * call defx#redraw()
 autocmd BufEnter * call defx#redraw()
 
-" base16-vim
+" Base16 Vim
 let base16colorspace=256
 colorscheme base16-default-dark
 
@@ -144,8 +144,7 @@ colorscheme base16-default-dark
 let g:terraform_align=1
 let g:terraform_fmt_on_save=1
 
-
-" vim-lsp
+" vim-lsp-settings
 function! s:on_lsp_buffer_enabled() abort
     setlocal omnifunc=lsp#complete
     if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
