@@ -68,10 +68,6 @@ export GO111MODULE=on
 # direnv
 eval "$(direnv hook zsh)"
 
-# ghq peco
-alias g='cd $(ghq list -p | peco)'
-alias gh='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
-
 # alias
 alias vi='nvim'
 alias vim='nvim'
@@ -90,5 +86,8 @@ alias gst='git status'
 alias gd='git diff'
 alias gpo='git push origin'
 alias gco='git checkout'
+
+alias g='cd $(ghq list -p | peco)'
+alias gh='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
 
 alias venv='. venv/bin/activate'
