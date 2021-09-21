@@ -81,7 +81,7 @@ function! s:defx_mappings() abort
     \ defx#is_directory() ?
     \ defx#do_action('open_tree') :
     \ defx#do_action('open')
-    nnoremap <silent><buffer><expr> t
+    nnoremap <silent><buffer><expr> T
     \ defx#do_action('open','tabnew')
     nnoremap <silent><buffer><expr> V
     \ defx#do_action('open', 'vsplit')
