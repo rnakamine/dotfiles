@@ -21,6 +21,7 @@ set laststatus=2
 set ruler
 set splitbelow
 set splitright
+set nohlsearch
 
 let mapleader = "\<Space>"
 
