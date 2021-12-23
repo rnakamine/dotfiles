@@ -51,6 +51,7 @@ Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
 call plug#end()
 
@@ -138,8 +139,7 @@ autocmd BufEnter * call defx#redraw()
 
 " Base16 Vim
 let base16colorspace=256
-colorscheme base16-default-dark
-
+colorscheme base16-tomorrow-night
 let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ 'mode_map': {
