@@ -141,7 +141,7 @@ autocmd BufEnter * call defx#redraw()
 let base16colorspace=256
 colorscheme base16-tomorrow-night
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'Tomorrow_Night_Bright',
       \ 'mode_map': {
         \ 'n' : 'N',
         \ 'i' : 'I',
