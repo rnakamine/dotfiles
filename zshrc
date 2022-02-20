@@ -65,11 +65,14 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export GO111MODULE=on
 
-# krew
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+# nodebrew
+export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 # direnv
 eval "$(direnv hook zsh)"
+
+# krew
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 # alias
 alias vi='nvim'
@@ -82,6 +85,7 @@ alias l='ls -la'
 alias k='kubectl'
 alias kx='kubectx | peco | xargs kubectx'
 alias kns='kubens | peco | xargs kubens'
+alias kf='kubectl fuzzy'
 
 alias dc='docker compose'
 
@@ -94,3 +98,5 @@ alias g='cd $(ghq list -p | peco)'
 alias gh='hub browse $(ghq list | peco | cut -d "/" -f 2,3)'
 
 alias venv='. venv/bin/activate'
+
+alias zenn='npx zenn'
