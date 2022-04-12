@@ -29,6 +29,11 @@ if has("autocmd")
     autocmd FileType json setlocal ts=2 sts=2 sw=2 expandtab
 endif
 
+if has('persistent_undo')
+  set undodir=~/.vim/undo
+  set undofile                                                                                                                                   
+endif
+
 " vim-plug
 call plug#begin('~/.vim/plugged')
 
