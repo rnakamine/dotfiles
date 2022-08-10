@@ -42,7 +42,7 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
-Plug 'mattn/vim-goimports'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'cohama/lexima.vim'
 Plug 'tpope/vim-commentary'
 Plug 'mattn/vim-sonictemplate'
