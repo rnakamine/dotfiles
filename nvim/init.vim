@@ -62,7 +62,7 @@ call plug#end()
 
 " Fern
 nnoremap fd :Fern . -reveal=%<CR>
-nnoremap ff :Fern . -reveal=% -drawer -toggle -width=40<CR>
+nnoremap <C-f> :Fern . -reveal=% -drawer -toggle -width=40<CR>
 let g:fern#default_hidden=1
 
 " Base16 Vim
