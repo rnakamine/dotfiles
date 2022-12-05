@@ -62,7 +62,7 @@ call plug#end()
 
 " Fern
 nnoremap fd :Fern . -reveal=%<CR>
-nnoremap <C-f> :Fern . -reveal=% -drawer -toggle -width=40<CR>
+nnoremap <C-f> :Fern . -reveal=% -drawer -toggle -width=50<CR>
 let g:fern#default_hidden=1
 
 " Base16 Vim
@@ -85,7 +85,7 @@ function! s:on_lsp_buffer_enabled() abort
     nmap <buffer> [g <Plug>(lsp-previous-diagnostic)
     nmap <buffer> ]g <Plug>(lsp-next-diagnostic)
     nmap <buffer> K <plug>(lsp-hover)
-    autocmd BufWritePre <buffer> LspDocumentFormatSync
+    " autocmd BufWritePre <buffer> LspDocumentFormatSync
 endfunction
 augroup lsp_install
     au!
