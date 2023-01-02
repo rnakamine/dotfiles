@@ -22,6 +22,7 @@ set ruler
 set splitbelow
 set splitright
 set nohlsearch
+set nocursorline
 
 let mapleader = "\<Space>"
 
@@ -64,10 +65,6 @@ call plug#end()
 nnoremap fd :Fern . -reveal=%<CR>
 nnoremap <C-f> :Fern . -reveal=% -drawer -toggle -width=50<CR>
 let g:fern#default_hidden=1
-
-" Base16 Vim
-let base16colorspace=256
-colorscheme base16-tomorrow-night
 
 " vim-terraform
 let g:terraform_align=1
