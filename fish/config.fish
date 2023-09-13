@@ -11,8 +11,8 @@ end
 set PATH /opt/homebrew/bin $PATH
 set -gx PATH $PATH $HOME/.krew/bin
 set -Ux FZF_DEFAULT_OPTS --layout=reverse
+set -x EDITOR vi
 
-alias vim='nvim'
 alias gst='git status'
 alias gd='git diff'
 alias gpo='git push origin'
