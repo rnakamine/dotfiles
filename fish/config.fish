@@ -8,9 +8,9 @@ function fish_prompt
   echo -n '$ '
 end
 
-set -Ux FZF_DEFAULT_OPTS --layout=reverse
-set -x EDITOR nvim
+set PATH /opt/homebrew/bin $PATH
 set -gx PATH $PATH $HOME/.krew/bin
+set -Ux FZF_DEFAULT_OPTS --layout=reverse
 
 alias vim='nvim'
 alias gst='git status'
