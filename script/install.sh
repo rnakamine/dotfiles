@@ -1,7 +1,6 @@
 DIR=$(cd $(dirname $0)/.. && pwd)
 
 CONFIGS=(
-  vim
   tmux
   tmux.conf
   gitconfig
@@ -15,14 +14,10 @@ do
   fi
 done
 
-# Neovim
-if [ ! -d "${HOME}/.config/nvim" ]; then
+if [ ! -d "${HOME}/.config/fish" ]; then
     mkdir -p ${HOME}/.config/
-    ln -s ${DIR}/nvim ${HOME}/.config/
-    # Install vim-plug
-    curl -sS -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dir \
-        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    echo "[INFO] Setup Neovim is complete."
+    ln -s ${DIR}/fish ${HOME}/.config/
+    echo "[INFO] Setup fish is complete."
 fi
 
 echo "[INFO] Done."
