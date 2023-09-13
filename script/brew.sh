@@ -14,38 +14,4 @@ if [ "${flag}" = "y" ] || [ "${flag}" = "Y" ]; then
     brew upgrade
 fi
 
-# https://formulae.brew.sh/formula/
-echo "[INFO] Installing fomulas."
-formula=(
-    grep
-    curl
-    wget
-    tree
-    tmux
-    hub 
-    tig
-    go
-    jq
-    peco   
-    ghq
-    git
-    tfenv
-    rbenv
-    pyenv
-    direnv
-    htop
-    zlib
-    bzip2
-    git-secrets
-)
-brew install ${formula[@]} && brew cleanup
-
-# https://github.com/Homebrew/homebrew-cask
-echo "[INFO] Installing casks."
-casks=(
-    docker
-    vagrant
-    virtualbox
-    visual-studio-code
-)
-brew install --cask ${casks[@]} && brew cleanup
+brew bundle
