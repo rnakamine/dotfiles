@@ -1,23 +1,18 @@
 DIR=$(cd $(dirname $0)/.. && pwd)
+XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
 
 CONFIGS=(
+  fish
+  git
   tmux
-  tmux.conf
-  gitconfig
-  gitignore_global
 )
+
 for CONFIG in ${CONFIGS[@]}
 do
-  if [ ! -e ${HOME}/.${CONFIG} ]; then
-    echo "[INFO] Place ${HOME}/.${CONFIG}"
-    ln -s ${DIR}/${CONFIG} ${HOME}/.${CONFIG}
+  if [ ! -e ${XDG_CONFIG_HOME}/${CONFIG} ]; then
+    echo "[INFO] Place ${XDG_CONFIG_HOME}/${CONFIG}"
+    ln -s ${DIR}/${CONFIG} ${XDG_CONFIG_HOME}/${CONFIG}
   fi
 done
-
-if [ ! -d "${HOME}/.config/fish" ]; then
-    mkdir -p ${HOME}/.config/
-    ln -s ${DIR}/fish ${HOME}/.config/
-    echo "[INFO] Setup fish is complete."
-fi
 
 echo "[INFO] Done."

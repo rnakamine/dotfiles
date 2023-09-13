@@ -17,6 +17,6 @@ git submodule init && git submodule update
 
 ## Run setup script
 ```
-./script/install.sh
 ./script/brew.sh
+./script/install.sh
 ```
