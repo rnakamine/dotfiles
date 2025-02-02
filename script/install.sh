@@ -15,4 +15,12 @@ do
   fi
 done
 
+# fish settings
+echo /opt/homebrew/bin/fish | sudo tee -a /etc/shells
+chsh -s /opt/homebrew/bin/fish
+
+# install fisher
+curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+fisher update
+
 echo "[INFO] Done."

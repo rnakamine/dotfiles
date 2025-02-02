@@ -1,17 +1,17 @@
-if test ! $(which brew); then
+if test ! $(which /opt/homebrew/bin/brew); then
     echo "[INFO] Installing homebrew."
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
 printf "Update recipes? [Y/n]: " && read flag
 if [ "${flag}" = "y" ] || [ "${flag}" = "Y" ]; then
-    brew update
+    /opt/homebrew/bin/brew update
 fi
 
 printf "Upgrade? [Y/n]: " && read flag
 if [ "${flag}" = "y" ] || [ "${flag}" = "Y" ]; then
-    brew update
-    brew upgrade
+    /opt/homebrew/bin/brew update
+    /opt/homebrew/bin/brew upgrade
 fi
 
-brew bundle
+/opt/homebrew/bin/brew bundle

@@ -10,7 +10,6 @@ end
 
 set PATH /opt/homebrew/bin $PATH
 set -gx PATH $PATH $HOME/.krew/bin
-set -Ux FZF_DEFAULT_OPTS --layout=reverse
 set -x EDITOR vi
 
 alias gst='git status'
@@ -22,10 +21,3 @@ alias gb="git branch | fzf | xargs git checkout"
 alias k='kubectl'
 alias kx='kubectx | fzf | xargs kubectx'
 alias kns='kubens | fzf | xargs kubens'
-alias pepassh='envchain nyah pepassh'
-
-set -Ux PYENV_ROOT $HOME/.pyenv
-set -Ux PATH  $PYENV_ROOT/bin $PATH
-pyenv init - | source
-
-eval (direnv hook fish)
