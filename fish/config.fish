@@ -11,6 +11,7 @@ end
 set PATH /opt/homebrew/bin $PATH
 set -gx PATH $PATH $HOME/.krew/bin
 set -x EDITOR vi
+set -x GITHUB_TOKEN (gh auth token)
 
 alias gst='git status'
 alias gd='git diff'
