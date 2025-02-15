@@ -24,3 +24,6 @@
 
 [init]
 	templateDir = ~/.git-templates/git-secrets
+	
+[url "ssh://git@github.com"]
+	insteadOf = https://github.com
