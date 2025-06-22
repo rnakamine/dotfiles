@@ -14,9 +14,11 @@ set -x XDG_STATE_HOME $HOME/.local/state
 set -x XDG_CACHE_HOME $HOME/.cache
 
 set PATH /opt/homebrew/bin $PATH
+set -x PATH $HOME/.nodebrew/current/bin $PATH
 set -gx PATH $PATH $HOME/.krew/bin $HOME/go/bin
 set -x EDITOR vi
 set -x GITHUB_TOKEN (gh auth token)
+set -x PATH $PATH (go env GOBIN)
 
 alias gst='git status'
 alias gd='git diff'
