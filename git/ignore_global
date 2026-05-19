@@ -8,3 +8,5 @@
 .tmp/*
 *.zwc
 .vscode/
+*/cookies.txt
+**/cookies.txt

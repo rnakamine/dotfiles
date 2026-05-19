@@ -5,6 +5,7 @@ CONFIGS=(
   fish
   git
   tmux
+  nvim
 )
 
 for CONFIG in ${CONFIGS[@]}
