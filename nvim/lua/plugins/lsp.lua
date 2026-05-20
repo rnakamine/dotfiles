@@ -58,8 +58,6 @@ return {
         vim.keymap.set("n", "K", vim.lsp.buf.hover, opts("Hover"))
         vim.keymap.set("n", "<Leader>rn", vim.lsp.buf.rename, opts("Rename"))
         vim.keymap.set("n", "<Leader>ca", vim.lsp.buf.code_action, opts("Code action"))
-        vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts("Prev diagnostic"))
-        vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts("Next diagnostic"))
         vim.keymap.set("n", "<Leader>e", vim.diagnostic.open_float, opts("Show diagnostic"))
       end,
     })

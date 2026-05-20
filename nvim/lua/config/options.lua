@@ -25,7 +25,7 @@ opt.splitright = true
 opt.hlsearch = false
 
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "json",
+  pattern = { "json", "lua" },
   callback = function()
     local bo = vim.bo
     bo.tabstop = 2
