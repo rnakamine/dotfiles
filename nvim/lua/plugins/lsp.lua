@@ -63,6 +63,24 @@ return {
     })
 
     vim.api.nvim_create_autocmd("BufWritePre", {
+      pattern = "*.go",
+      group = vim.api.nvim_create_augroup("go_organize_imports", { clear = true }),
+      callback = function()
+        local params = vim.lsp.util.make_range_params(0, "utf-16")
+        params.context = { only = { "source.organizeImports" } }
+        local results = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, 3000)
+        for cid, res in pairs(results or {}) do
+          for _, action in pairs(res.result or {}) do
+            if action.edit then
+              local enc = (vim.lsp.get_client_by_id(cid) or {}).offset_encoding or "utf-16"
+              vim.lsp.util.apply_workspace_edit(action.edit, enc)
+            end
+          end
+        end
+      end,
+    })
+
+    vim.api.nvim_create_autocmd("BufWritePre", {
       group = vim.api.nvim_create_augroup("lsp_format_on_save", { clear = true }),
       callback = function(args)
         vim.lsp.buf.format({ bufnr = args.buf, async = false })
