@@ -1,8 +1,6 @@
 theme = One Half Dark
-# theme = Tomorrow Night
 macos-titlebar-style = tabs
 font-family = "JetBrains Mono"
-# title = " "
 copy-on-select = clipboard
 
 cursor-style = block
