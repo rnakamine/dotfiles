@@ -24,6 +24,7 @@ alias k='kubectl'
 alias kx='kubectx | fzf | xargs kubectx'
 alias kns='kubens | fzf | xargs kubens'
 alias vim='nvim'
+alias c='claude'
 
 # ASDF configuration code
 if test -z $ASDF_DATA_DIR

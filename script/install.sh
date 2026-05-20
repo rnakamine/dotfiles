@@ -3,8 +3,8 @@ XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
 
 CONFIGS=(
   fish
+  ghostty
   git
-  tmux
   nvim
 )
 
