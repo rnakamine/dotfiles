@@ -8,7 +8,7 @@ return {
   config = function()
     local servers = { "gopls", "terraformls", "lua_ls", "jsonls", "yamlls" }
 
-    -- lspconfigのサーバ名とmasonのパッケージ名が異なる場合のマッピング
+    -- Map lspconfig server names to mason package names where they differ
     local mason_packages = {
       lua_ls = "lua-language-server",
       terraformls = "terraform-ls",
