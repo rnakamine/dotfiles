@@ -25,6 +25,7 @@ alias kx='kubectx | fzf | xargs kubectx'
 alias kns='kubens | fzf | xargs kubens'
 alias vim='nvim'
 alias c='claude'
+alias mkday='mkdir -p (date +%Y-%m-%d)'
 
 # ASDF configuration code
 if test -z $ASDF_DATA_DIR
